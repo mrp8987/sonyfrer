@@ -4,31 +4,32 @@ allow-lan: true
 mode: rule
 log-level: info
 proxies:
-- name: 🇰🇿 KZ 01 - xiaohe
-  type: vless
-  server: 3h-kazakhstan1.09vpn.com
-  port: 8443
-  uuid: 2424febb-43cb-488d-bdd1-401e923c8e48
+- name: 🇭🇰 中国香港 (Hong Kong) 01 - xiaohe
+  type: vmess
+  server: 47.244.120.197
+  port: 36703
+  uuid: 45b83519-9c4f-4052-a11b-02e017b636d4
+  alterId: 0
+  cipher: auto
   udp: true
-  tls: true
+  tls: false
   skip-cert-verify: true
-  servername: 3h-kazakhstan1.09vpn.com
   network: ws
   ws-opts:
-    path: /vless/
+    path: /arki
     headers:
-      Host: 3h-kazakhstan1.09vpn.com
+      Host: 47.244.120.197
 proxy-groups:
 - name: PROXIES
   type: select
   proxies:
   - AUTO
-  - 🇰🇿 KZ 01 - xiaohe
+  - 🇭🇰 中国香港 (Hong Kong) 01 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
   interval: 300
   proxies:
-  - 🇰🇿 KZ 01 - xiaohe
+  - 🇭🇰 中国香港 (Hong Kong) 01 - xiaohe
 rules:
 - MATCH,PROXIES

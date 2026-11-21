@@ -4,31 +4,31 @@ allow-lan: true
 mode: rule
 log-level: info
 proxies:
-- name: 🇱🇺 LU 01 - xiaohe
+- name: 🇧🇿 BZ 01 - xiaohe
   type: vless
-  server: 92.223.84.254
+  server: 45.135.235.255
   port: 443
-  uuid: 740b2630-b42d-425c-bacd-37e7e30d78f1
+  uuid: 4dd8d557-dbe3-4c6f-a3ee-168da9a03d1b
   udp: true
   tls: true
   skip-cert-verify: true
-  servername: subgift.gcorecdn.com
+  servername: worker3.paneger955.workers.dev
   network: ws
   ws-opts:
-    path: /t.me-SubGift
+    path: /
     headers:
-      Host: subgift.gcorecdn.com
+      Host: worker3.paneger955.workers.dev
 proxy-groups:
 - name: PROXIES
   type: select
   proxies:
   - AUTO
-  - 🇱🇺 LU 01 - xiaohe
+  - 🇧🇿 BZ 01 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
   interval: 300
   proxies:
-  - 🇱🇺 LU 01 - xiaohe
+  - 🇧🇿 BZ 01 - xiaohe
 rules:
 - MATCH,PROXIES
